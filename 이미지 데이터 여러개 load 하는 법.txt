@@ -1,0 +1,5 @@
+from keras.preprocessing.image import ImageDataGenerator
+
+data_generator = ImageDataGenerator(rescale=1./255) / normalization
+train_generator = data_generator.flow_from_directory("C:\\Users\\nise\Desktop\\images\\train", target_size=(100,100),
+                                                     batch_size=1, class_mode='categorical') /이 명령어로 load 가능

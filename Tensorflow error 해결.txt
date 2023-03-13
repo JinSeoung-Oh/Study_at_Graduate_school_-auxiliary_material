@@ -1,0 +1,22 @@
+ImportError: Could not import PIL.Image. The use of `array_to_img` requires PIL.
+==> install pillow
+
+TypeError: Invalid dimensions for image data
+==> imshow를 하기에는 image data의 차원이 문제가 있는 것이기 때문에 squeeze와 같이
+차원을 조절해 주면 문제 없음
+
+cv2.error: OpenCV(4.1.0) C:\projects\opencv-python\opencv\modules\imgproc\src\canny.cpp:949: error: (-215:Assertion failed) _src.depth() == CV_8U in function 'cv::Canny'
+==> img=img.astype(np.uint8)으로 8 bit format으로 바꾸어주면 해결
+
+SystemError: new style getargs format but argument is not a tuple
+==> 말 그대로 tuple이 아니어서 안 되는 것이기 때문에 tuple로 바꾸어주면 해결 가능
+다만, tuple의 성질 상 매우 귀찮아 질 수도 있음
+
+Process finished with exit code -1073740791 (0xC0000409)
+오류 메세지의 맨 위에 문제가 되는 모듈이 나옴. 그 모듈의 문제가 
+해결 될 때까지 삭제 및 설치를 반복함 [공식 해결 방법]
+만약 안되면 아나콘다 다시 재 설치
+
+** OpenCV 설치 시 
+conda install -c conda-forge opencv를 사용하면 복잡한 과정 없이 바로 설치 가능
+
